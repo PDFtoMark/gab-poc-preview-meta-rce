@@ -1,0 +1,14 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions: {}
+
+jobs:
+  pr-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build preview (legit, produces no artifact)
+        run: echo "legit preview build for ${{ github.event.pull_request.number }}"
